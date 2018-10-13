@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>What you should be doing</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
 
@@ -13,9 +15,9 @@
 
 	  if($data->modules){
 		    // print_r($json->modules);
-		    echo "<form id= action='/'>";
+		    echo "<form id='options' action='/'>";
 		    foreach($data->modules as $key => $val){
-		        echo "<input type='checkbox' name='$key' onclick='check(this);' >$val";
+		        echo "<input type='checkbox' name='$key' onclick='runOption($key)'>$val";
 		    }
 		    echo "</form>";
 	  }
@@ -34,5 +36,6 @@
 		    echo "</ul";
 	  }
 	  ?>
+
 </body>
 </html>

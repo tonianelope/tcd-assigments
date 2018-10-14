@@ -1,22 +1,31 @@
 {
-    "modules" : {
-	"CS4001": "Fuzzy",
-	"CS4004": "Formal",
-	"CS4012": "Functional",
-	"CS4021": "Architecture",
-	"CS4031": "Next Gen",
-	"CS4051": "HF",
-	"CS4052": "Graphics",
-	"CS4053": "Vision",
-	"CS4081": "BESS for CS",
-	"CS4LL5": "Linguistics",
-	"CS4400": "Scalable",
-	"CS4404": "ML",
-	"CS4098": "ProPro",
-	"CS7091": "Internz",
-	"EE4C16": "Better ML"
+    "modes" : {
+        "tonia": [
+            "CS4004", "CS4012", "CS4051", "CS4081", "CS4LL5", "CS4404", "EE4C16"
+        ],
+        "test": [
+            "CS4051", "CS4081"
+        ]
     },
-    
+
+    "modules" : {
+	      "CS4001": "Fuzzy",
+	      "CS4004": "Formal",
+	      "CS4012": "Functional",
+	      "CS4021": "Architecture",
+	      "CS4031": "Next Gen",
+	      "CS4051": "HF",
+	      "CS4052": "Graphics",
+	      "CS4053": "Vision",
+	      "CS4081": "BESS for CS",
+	      "CS4LL5": "Linguistics",
+	      "CS4400": "Scalable",
+	      "CS4404": "ML",
+	      "CS4098": "ProPro",
+	      "CS7091": "Internz",
+	      "EE4C16": "Better ML"
+    },
+
     "assignments": [
 	{
 	    "due": "2018-10-12",
@@ -46,7 +55,7 @@
 	    "module": "CS4404",
 	    "title": "Clustering",
 	    "link": "https://repl.it/student/classrooms/90041"
-	},	
+	},
 	{
 	    "due": "2018-10-12",
 	    "module": "CS4012",
@@ -69,7 +78,7 @@
 	},
 	{
 	    "due": "2018-10-14",
-	    "module": "4CSLL5",
+	    "module": "CS4LL5",
 	    "title": "EM in coin tossing",
 	    "link" : "https://www.scss.tcd.ie/Martin.Emms/4CSLL5/Assignments/SecondAssign/index.html"
 	},

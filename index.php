@@ -54,17 +54,22 @@
 			      return strcmp($a->due, $b->due);
 		    });
 		    foreach ($data->assignments as $idx => $todo){
-			      echo "<tr " .
-                 ($todo->module ? "class='$todo->module' " : "") .
-                 (in_array($todo->module, $mode) ? "" : "display='none' ")
-               . ">" ;
-			      echo "<td>" . date('m/d', strtotime($todo->due)) . "</td>";
-				    echo "<td>" . ($todo->link ? "<a href=$todo->link>$todo->title</a>" : $todo->title) ."</td>";
-			      echo "</tr>";
+            $due = new DateTime($todo->due);
+            $prev = new DateTime('yesterday');
+            if($due>=$prev){
+			          echo "<tr " .
+                     ($todo->module ? "class='$todo->module' " : "") .
+                     (in_array($todo->module, $mode) ? "" : "display='none' ")
+                   . ">" ;
+                $diff = $prev->diff($due);
+                echo "<td>" . $due->format("d/m") ."</td>";
+			          echo "<td>" . $diff->d . "</td>";
+				        echo "<td>" . ($todo->link ? "<a href=$todo->link>$todo->title</a>" : $todo->title) ."</td>";
+			          echo "</tr>";
+            }
 		    }
 		    echo "</ul";
 	  }
 	  ?>
-    
 </body>
 </html>

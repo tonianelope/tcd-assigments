@@ -17,27 +17,30 @@
 	  $data = json_decode($file);
     // set default mode
     $mode = $data->modes->{$username} ?: [];
+    //$mode = [];
 
-    print_r($mode);
     // load modes
     if($data->modes){
         echo "<h4>Select a mode</h4>";
         echo "<form id='modes'>";
         foreach($data->modes as $key => $val){
-            echo "<input type='checkbox' name='$val' " .
-                 (($key == $username) ? " checked='' " : "")
+            $vals = implode(' ', $val);
+            echo "<input type='checkbox' value='$vals'" .
+                (($key == $username) ? " checked='' " : "")
                . ">$key";
         }
+        $vals = implode(' ',array_keys((array)$data->modules));
+        echo "<input type='checkbox' value='$vals' >all";
         echo "</form>";
     }
 
     // module options
 	  if($data->modules){
         echo "<h4>Select modules</h4>";
-		    echo "<form id='options'>";
+		    echo "<form id='options' >";
 		    foreach($data->modules as $key => $val){
 		        echo "<input type='checkbox' name='$key' " .
-               (in_array($key, $mode) ? "checked=''" : "")
+               (in_array($key, $mode) ? "checked='checked'" : "")
                 . ">$val";
 		    }
 		    echo "</form>";
@@ -62,6 +65,6 @@
 		    echo "</ul";
 	  }
 	  ?>
-
+    
 </body>
 </html>

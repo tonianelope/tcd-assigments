@@ -63,9 +63,10 @@
                    . ">" ;
                 $diff = $prev->diff($due);
                 echo "<td>" . $due->format("d/m") ."</td>";
-			          echo "<td>" . $diff->d . "</td>";
+			          echo "<td>" . $diff->format("%a") . "</td>";
 				        echo "<td>" . ($todo->link ? "<a href=$todo->link>$todo->title</a>" : $todo->title) ."</td>";
-			          echo "</tr>";
+                echo "<td>" . ($data->modules->{$todo->module}) . "</td>";
+                echo "</tr>";
             }
 		    }
 		    echo "</ul";

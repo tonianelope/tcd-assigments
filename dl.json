@@ -83,6 +83,18 @@
 	    "due": "2018-11-12",
 	    "module": "CS4012",
 	    "title": "Paper review"
+	},{
+	    "due": "2018-10-29",
+	    "module": "CS4404",
+	    "title": "Research I"
+	},{
+	    "due": "2018-11-16",
+	    "module": "CS4404",
+	    "title": "Unsupervised Learning"
+	},{
+	    "due": "2018-12-02",
+	    "module": "CS4404",
+	    "title": "Research II"
 	}
     ]
 }

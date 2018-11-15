@@ -2,7 +2,10 @@
     "modes" : {
         "tonia": [
             "CS4004", "CS4012", "CS4051", "CS4081", "CS4LL5", "CS4404", "EE4C16"
-        ]
+        ],
+		"blottn": [
+			"CS4012","CS4051","CS4021","CS4052","CS4400","CS4081"
+		]
     },
 
     "modules" : {
@@ -24,6 +27,11 @@
     },
 
     "assignments": [
+	{
+	    "due": "2018-11-20",
+	    "module": "CS4052",
+	    "title": "Final assignment"
+	},
 	{
 	    "due": "2018-10-12",
 	    "module": "CS4004",

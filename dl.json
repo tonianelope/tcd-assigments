@@ -25,6 +25,11 @@
 
     "assignments": [
 	{
+	    "due": "2018-11-20",
+	    "module": "CS4052",
+	    "title": "Final assignment"
+	},
+	{
 	    "due": "2018-10-12",
 	    "module": "CS4004",
 	    "title": "Formal 1",

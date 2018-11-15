@@ -9,6 +9,7 @@
 
     <h1>Stuff you should be doing</h1>
 
+    <p><a href="https://github.com/tonianelope/todo-site/blob/master/dl.json">Edit assignments</a> <p>
     <?php
     $subdomains = Explode(".", $_SERVER["SERVER_NAME"]);
     $username = $subdomains[0];
@@ -50,21 +51,29 @@
 	  if(count($data->assignments)){
         echo "<h4>Stuff to do</h4>";
 		    echo "<table>";
+        echo "<tr><td>Due</td>".
+             "<td>Days Left</td>".
+             "<td>Name</td>".
+             "<td>Module</td></tr>";
 		    usort($data->assignments, function($a, $b){
 			      return strcmp($a->due, $b->due);
 		    });
+        $prev = new DateTime('today');
+        $yd = new DateTime('today');
+        $yd->sub(new DateInterval('P1D'));
 		    foreach ($data->assignments as $idx => $todo){
             $due = new DateTime($todo->due);
-            $prev = new DateTime('yesterday');
-            if($due>=$prev){
+            if($due>=($yd)){
 			          echo "<tr " .
                      ($todo->module ? "class='$todo->module' " : "") .
                      (in_array($todo->module, $mode) ? "" : "display='none' ")
                    . ">" ;
                 $diff = $prev->diff($due);
-                echo "<td>" . $due->format("d/m") ."</td>";
+                echo "<td>" . $due->format("d/m D") ."</td>";
 			          echo "<td>" . $diff->format("%a") . "</td>";
-				        echo "<td>" . ($todo->link ? "<a href=$todo->link>$todo->title</a>" : $todo->title) ."</td>";
+				        echo "<td>"
+                   . ($todo->link ? "<a href=$todo->link target='_blank'>$todo->title</a>" : $todo->title)
+                    ."</td>";
                 echo "<td>" . ($data->modules->{$todo->module}) . "</td>";
                 echo "</tr>";
             }

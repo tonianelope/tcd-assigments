@@ -126,6 +126,10 @@
 	    "due": "2018-12-02",
 	    "module": "CS4404",
 	    "title": "Research II"
-	}
+	},{
+	    "due": "2018-11-26",
+	    "module": "CS4012",
+	    "title": "Time-traveling interpreter"
+  }
     ]
 }
